@@ -18,7 +18,6 @@ app.use(cors());
 
 app.use("/", signuRoute)
 app.use("/",loginRoute)
-// app.use("/",authentication)
 
 app.listen(PORT, async () => {
     await connect();
