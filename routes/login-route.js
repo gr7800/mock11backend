@@ -6,7 +6,9 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const loginRoute=Router();
 
-
+loginRoute.get("/login",(req, res) => {
+    res.send("Login page");
+  })
 
 loginRoute.post("/login",async(req,res)=>{
     let {email,password}= req.body

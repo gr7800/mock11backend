@@ -16,8 +16,8 @@ app.get("/", (req, res) => {
 
 app.use(cors());
 
-app.use("/", signuRoute)
-app.use("/",loginRoute)
+app.use("/user", signuRoute)
+app.use("/user",loginRoute)
 
 app.listen(PORT, async () => {
     await connect();
