@@ -12,7 +12,8 @@ exports.register=async(req,res)=>{
         const newUser= new User({email,password:hash});
         await newUser.save();
         return res.status(201).send({meassage:"user created sucessfully","user":newUser})
-       }      
+       }       
+           
     }
     catch(e){
      console.log(e.meassage)
@@ -25,10 +26,10 @@ exports.login=async(req,res)=>{
     if(await argon2.verify(user.password,password)){
         const token= jwt.sign({
             ...user
-        },"Guddu12345",{
+        },"VIKALP@99",{
             expiresIn:"7 days"
         })
-        const refreshToken=jwt.sign({id:user._id},"GUDDU",{
+        const refreshToken=jwt.sign({id:user._id},"REFRESHSECRET",{
             expiresIn:"28 days"
         })
         return res.send({message:"Login success",token, refreshToken, user:user})
